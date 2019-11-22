@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->verticalSlider->setValue(0);
 
    connect(ui->verticalSlider,SIGNAL(actionTriggered(int)),this, SLOT(vitesse()));
+   connect(ui->actionclose, SIGNAL(triggered()),this,SLOT(close()));
 
 
 }
@@ -31,15 +32,16 @@ MainWindow::~MainWindow()
 void MainWindow::Scene()
 {ui->graphicsView->setScene(scene);
  // rectangular background
-     QBrush brush;
-     QPen pen;
-     brush.setStyle(Qt::SolidPattern);
-     brush.setColor(Qt::transparent);
-     pen.setStyle(Qt::SolidLine);
-     pen.setColor(Qt::red);
+//     QBrush brush;
+//     QPen pen;
+//     brush.setStyle(Qt::SolidPattern);
+//     brush.setColor(Qt::transparent);
+//     pen.setStyle(Qt::SolidLine);
+//     pen.setColor(Qt::red);
 
-     scene->addRect(myitem->boundingRect(),pen,brush);
-     myitem->v = ui->verticalSlider->value();
+//     scene->addRect(myitem->boundingRect(),pen,brush);
+
+     myitem->v1 = ui->verticalSlider->value();
      scene->addItem(myitem);
 
 
@@ -47,7 +49,7 @@ void MainWindow::Scene()
 
 void MainWindow::vitesse()
 {//scene->removeItem(myitem);
-    myitem->v = ui->verticalSlider->value();
-scene->update();
+    myitem->v1 = ui->verticalSlider->value();
+    scene->update();
 
 }

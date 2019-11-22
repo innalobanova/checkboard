@@ -12,11 +12,11 @@ public:
     MyGraphicsItem(QGraphicsItem *parent = nullptr);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-   int xpos;
-   int ypos;
-   int xc;
-   int yc;
-   int v; //vitesse
+   double xpos;
+   double ypos;
+   double xc;
+   double yc;
+   int v1; //vitesse
    const double pi=3.14159265359;
 
 
