@@ -6,50 +6,40 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>544</width>
-    <height>579</height>
+    <width>274</width>
+    <height>271</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QGraphicsView" name="graphicsView">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>500</width>
-        <height>500</height>
-       </size>
-      </property>
-     </widget>
+     <widget class="QGraphicsView" name="graphicsView"/>
     </item>
     <item>
-     <widget class="QSlider" name="verticalSlider">
+     <widget class="QFontComboBox" name="fontComboBox"/>
+    </item>
+    <item>
+     <widget class="QSlider" name="horizontalSlider">
       <property name="minimum">
-       <number>-20</number>
+       <number>0</number>
       </property>
       <property name="maximum">
-       <number>300</number>
+       <number>270</number>
       </property>
-      <property name="value">
-       <number>-20</number>
+      <property name="singleStep">
+       <number>2</number>
       </property>
       <property name="orientation">
-       <enum>Qt::Vertical</enum>
+       <enum>Qt::Horizontal</enum>
       </property>
       <property name="tickPosition">
        <enum>QSlider::TicksBelow</enum>
       </property>
       <property name="tickInterval">
-       <number>30</number>
+       <number>4</number>
       </property>
      </widget>
     </item>
@@ -60,17 +50,10 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>544</width>
+     <width>274</width>
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuclose">
-    <property name="title">
-     <string>close</string>
-    </property>
-    <addaction name="actionclose"/>
-   </widget>
-   <addaction name="menuclose"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -81,14 +64,6 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionclose">
-   <property name="text">
-    <string>close</string>
-   </property>
-   <property name="shortcut">
-    <string>Alt+X</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -1,10 +1,11 @@
-﻿#ifndef MAINWINDOW_H
+#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QGraphicsView>
 #include <QGraphicsScene>
-#include "mygraphicsitem.h"
+#include <QGraphicsView>
+#include "gauge.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -16,17 +17,17 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    Gauge *vitesse = new Gauge();
     QGraphicsView *view = new QGraphicsView();
     QGraphicsScene *scene = new QGraphicsScene ();
-    MyGraphicsItem *myitem = new MyGraphicsItem ();
+
     ~MainWindow();
 public slots:
     void Scene();
-    void vitesse();
+    void Font();
 
 private:
     Ui::MainWindow *ui;
-
 };
 
 #endif // MAINWINDOW_H
