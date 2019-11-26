@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->fontComboBox,SIGNAL(currentTextChanged(const QString)), this, SLOT(Font()) );
+
     connect(ui->horizontalSlider, SIGNAL(valueChanged(int)), this, SLOT(Font()));
 }
 
@@ -20,14 +20,17 @@ MainWindow::~MainWindow()
 void MainWindow::Scene()
 {ui->graphicsView->setScene(scene);
 
-  scene->addItem(vitesse);
-
+//  scene->addItem(vitesse);
+    speedometer->vmax=350;
+    scene->addItem(speedometer);
+    scene->setBackgroundBrush(QBrush(Qt::blue, Qt::Dense4Pattern));
 }
 
 void MainWindow::Font()
 {
-    //vitesse->font = ui->fontComboBox->currentText();
-    vitesse->shift=ui->horizontalSlider->value();
+
+    //vitesse->shift=ui->horizontalSlider->value();
+    speedometer->v = ui->horizontalSlider->value();
     scene->update();
 
 }

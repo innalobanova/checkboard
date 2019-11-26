@@ -5,6 +5,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include "gauge.h"
+#include "speedometerinna.h"
 
 
 namespace Ui {
@@ -18,7 +19,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     Gauge *vitesse = new Gauge();
-    QGraphicsView *view = new QGraphicsView();
+    SpeedometerInna *speedometer = new SpeedometerInna();
     QGraphicsScene *scene = new QGraphicsScene ();
 
     ~MainWindow();

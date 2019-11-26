@@ -24,7 +24,7 @@
        <number>0</number>
       </property>
       <property name="maximum">
-       <number>270</number>
+       <number>300</number>
       </property>
       <property name="singleStep">
        <number>2</number>
@@ -41,7 +41,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QFontComboBox" name="fontComboBox"/>
+     <widget class="QGraphicsView" name="graphicsView_2"/>
     </item>
    </layout>
   </widget>
