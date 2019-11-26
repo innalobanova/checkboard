@@ -26,7 +26,7 @@ void MainWindow::Scene()
 
 void MainWindow::Font()
 {
-    vitesse->font = ui->fontComboBox->currentText();
+    //vitesse->font = ui->fontComboBox->currentText();
     vitesse->shift=ui->horizontalSlider->value();
     scene->update();
 

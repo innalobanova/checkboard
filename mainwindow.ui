@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>274</width>
-    <height>271</height>
+    <width>468</width>
+    <height>545</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,6 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QGraphicsView" name="graphicsView"/>
-    </item>
-    <item>
-     <widget class="QFontComboBox" name="fontComboBox"/>
     </item>
     <item>
      <widget class="QSlider" name="horizontalSlider">
@@ -43,6 +40,9 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QFontComboBox" name="fontComboBox"/>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -50,7 +50,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>274</width>
+     <width>468</width>
      <height>22</height>
     </rect>
    </property>

@@ -15,6 +15,8 @@ public:
   // double ypos;
    double xc;
    double yc;
+   double xl;
+   double yl;
    int startAngle;
    int spanAngle;
    int vmax;
