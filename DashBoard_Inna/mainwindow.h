@@ -4,15 +4,16 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include "speedometerinna.h"
-#include "arrowspeedometerinna.h"
-#include "tachometerinna.h"
-#include "arrowtachometerinna.h"
-#include "oilgaugeinna.h"
-#include "arrowoilt.h"
-#include "infowindowinna.h"
-#include "fuelengine.h"
-#include "iconinna.h"
+#include <QTcpServer>
+#include "libH/speedometerinna.h"
+#include "libH/arrowspeedometerinna.h"
+#include "libH/tachometerinna.h"
+#include "libH/arrowtachometerinna.h"
+#include "libH/oilgaugeinna.h"
+#include "libH/arrowoilt.h"
+#include "libH/infowindowinna.h"
+#include "libH/fuelengine.h"
+#include "libH/iconinna.h"
 
 
 namespace Ui {
@@ -40,10 +41,13 @@ public:
 public slots:
     void Scene();
     void Font();
-    void HandBreak(bool);
+    void connexion();
+    void reception();
 
 private:
     Ui::MainWindow *ui;
+    QTcpServer * server;
+    QTcpSocket * socket;
 };
 
 #endif // MAINWINDOW_H

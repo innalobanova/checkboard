@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,27 +27,27 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    speedometerinna.cpp \
-    tachometerinna.cpp \
-    oilgaugeinna.cpp \
-    infowindowinna.cpp \
-    fuelengine.cpp \
-    iconinna.cpp \
-    arrowspeedometerinna.cpp \
-    arrowtachometerinna.cpp \
-    arrowoilt.cpp 
+    libCPP/speedometerinna.cpp \
+    libCPP/tachometerinna.cpp \
+    libCPP/oilgaugeinna.cpp \
+    libCPP/infowindowinna.cpp \
+    libCPP/fuelengine.cpp \
+    libCPP/iconinna.cpp \
+    libCPP/arrowspeedometerinna.cpp \
+    libCPP/arrowtachometerinna.cpp \
+    libCPP/arrowoilt.cpp 
 
 HEADERS += \
         mainwindow.h \
-    speedometerinna.h \
-    tachometerinna.h \
-    oilgaugeinna.h \
-    infowindowinna.h \
-    fuelengine.h \
-    iconinna.h \
-    arrowspeedometerinna.h \
-    arrowtachometerinna.h \
-    arrowoilt.h    
+    libH/speedometerinna.h \
+    libH/tachometerinna.h \
+    libH/oilgaugeinna.h \
+    libH/infowindowinna.h \
+    libH/fuelengine.h \
+    libH/iconinna.h \
+    libH/arrowspeedometerinna.h \
+    libH/arrowtachometerinna.h \
+    libH/arrowoilt.h     
 FORMS += \
         mainwindow.ui
 

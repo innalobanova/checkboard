@@ -1,8 +1,13 @@
 <RCC>
     <qresource prefix="/icons">
         <file>texture1.png</file>
+        <file>myicons/black-leather-texture-background.jpg</file>
     </qresource>
     <qresource prefix="/">
         <file>myicons/hand_brake.png</file>
+        <file>myicons/Oil_white.gif</file>
+        <file>myicons/Oil_t_white.gif</file>
+        <file>myicons/battery.gif</file>
+        <file>myicons/OFF.gif</file>
     </qresource>
 </RCC>
