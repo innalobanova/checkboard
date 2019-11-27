@@ -37,7 +37,6 @@ QRectF SpeedometerInna::boundingRect() const
 
 void SpeedometerInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 { painter->setRenderHint(QPainter::Antialiasing); // for better smooth rendering
-    {
      QRadialGradient radialGrad(QPointF(xc, yc), r+20); //setting the gradient to draw the outer arc
      radialGrad.setColorAt(0, Qt::transparent);
      radialGrad.setColorAt(0.8, "#f2f2f2");
@@ -86,6 +85,6 @@ void SpeedometerInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
          QPointF(xc+5*cos((A0-v-90)*rad),yc-5*sin((A0-v-90)*rad))
           };
      painter->drawConvexPolygon(points, 3);
-      }
+
 
 }

@@ -37,7 +37,6 @@ void Gauge::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
   yc=0.5*this->boundingRect().height(); //center of the rectangle
   QRadialGradient radialGrad(QPointF(xc, yc), 170);
  radialGrad.setColorAt(0, Qt::transparent);
- //radialGrad.setColorAt(0.88, "#f2f2f2");
  radialGrad.setColorAt(150.0/170.0, "#595959");
  radialGrad.setColorAt(0.975, "#f2f2f2");
  radialGrad.setColorAt(0.98, "#333333");

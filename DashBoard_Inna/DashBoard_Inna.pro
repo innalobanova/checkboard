@@ -28,12 +28,16 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     gauge.cpp \
-    speedometerinna.cpp
+    speedometerinna.cpp \
+    tachometerinna.cpp \
+    oilgaugeinna.cpp
 
 HEADERS += \
         mainwindow.h \
     gauge.h \
-    speedometerinna.h
+    speedometerinna.h \
+    tachometerinna.h \
+    oilgaugeinna.h
 
 FORMS += \
         mainwindow.ui

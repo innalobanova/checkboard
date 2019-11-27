@@ -6,6 +6,8 @@
 #include <QGraphicsView>
 #include "gauge.h"
 #include "speedometerinna.h"
+#include "tachometerinna.h"
+#include "oilgaugeinna.h"
 
 
 namespace Ui {
@@ -20,6 +22,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     Gauge *vitesse = new Gauge();
     SpeedometerInna *speedometer = new SpeedometerInna();
+    TachometerInna *tachometer = new TachometerInna();
+    OilGaugeInna *oilgauge = new OilGaugeInna();
     QGraphicsScene *scene = new QGraphicsScene ();
 
     ~MainWindow();
