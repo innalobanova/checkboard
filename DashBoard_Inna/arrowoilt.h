@@ -1,15 +1,15 @@
-#ifndef OILGAUGEINNA_H
-#define OILGAUGEINNA_H
+#ifndef ARROWOILT_H
+#define ARROWOILT_H
 #include <QGraphicsItem>
 #include <QRectF>
 #include <QFont>
 
 
-class OilGaugeInna : public QGraphicsItem
+class ArrowOilT : public QGraphicsItem
 {
 public:
-    OilGaugeInna(QGraphicsItem *parent = nullptr);
-    OilGaugeInna(int TMAX, int LMAX, int ALPHA0, int ALPHAMAX);
+    ArrowOilT(QGraphicsItem *parent = nullptr);
+    ArrowOilT(int TMAX, int LMAX, int ALPHA0, int ALPHAMAX);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     double r;
@@ -30,4 +30,4 @@ private:
 
 };
 
-#endif // OILGAUGEINNA_H
+#endif // ARROWOILT_H

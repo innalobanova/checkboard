@@ -1,14 +1,14 @@
-#ifndef SPEEDOMETERINNA_H
-#define SPEEDOMETERINNA_H
+#ifndef ARROWSPEEDOMETERINNA_H
+#define ARROWSPEEDOMETERINNA_H
 #include <QGraphicsItem>
 #include <QRectF>
 #include <QFont>
 
-class SpeedometerInna : public QGraphicsItem
+class ArrowSpeedometerInna : public QGraphicsItem
 {
 public:
-    SpeedometerInna(QGraphicsItem *parent = nullptr);
-    SpeedometerInna(int VMAX, int ALPHA0, int ALPHAMAX);
+    ArrowSpeedometerInna(QGraphicsItem *parent = nullptr);
+    ArrowSpeedometerInna(int VMAX, int ALPHA0, int ALPHAMAX);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     double r;
@@ -27,4 +27,4 @@ private:
 
 };
 
-#endif // SPEEDOMETERINNA_H
+#endif // ARROWSPEEDOMETERINNA_H

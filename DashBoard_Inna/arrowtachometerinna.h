@@ -1,14 +1,14 @@
-#ifndef TACHOMETERINNA_H
-#define TACHOMETERINNA_H
+#ifndef ARROWTACHOMETERINNA_H
+#define ARROWTACHOMETERINNA_H
 #include <QGraphicsItem>
 #include <QRectF>
 #include <QFont>
 
-class TachometerInna : public QGraphicsItem
+class ArrowTachometerInna : public QGraphicsItem
 {
 public:
-    TachometerInna(QGraphicsItem *parent = nullptr);
-    TachometerInna(int VMAX, int ALPHA0, int ALPHAMAX);
+    ArrowTachometerInna(QGraphicsItem *parent = nullptr);
+    ArrowTachometerInna(int VMAX, int ALPHA0, int ALPHAMAX);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     double r;
@@ -27,4 +27,4 @@ private:
     
 };
 
-#endif // TACHOMETERINNA_H
+#endif // ARROWTACHOMETERINNA_H

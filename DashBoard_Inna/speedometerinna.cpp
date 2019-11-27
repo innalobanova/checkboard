@@ -3,7 +3,7 @@
 #include <QtMath>
 #include <QPainter>
 
-SpeedometerInna::SpeedometerInna()
+SpeedometerInna::SpeedometerInna(QGraphicsItem *parent) :  QGraphicsItem(parent)
 {
     vmax = 300 ;
     A0 = 225 ;
@@ -37,6 +37,8 @@ QRectF SpeedometerInna::boundingRect() const
 
 void SpeedometerInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 { painter->setRenderHint(QPainter::Antialiasing); // for better smooth rendering
+    painter->setBrush(QBrush("#0a0f0f",Qt::SolidPattern));
+    painter->drawEllipse(QRectF(xc-r,yc-r,r*2,r*2));
      QRadialGradient radialGrad(QPointF(xc, yc), r+20); //setting the gradient to draw the outer arc
      radialGrad.setColorAt(0, Qt::transparent);
      radialGrad.setColorAt(0.8, "#f2f2f2");
@@ -62,29 +64,29 @@ void SpeedometerInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
          painter->drawLine(xc+(r-5)*cos((A0-k*i)*rad), yc-(r-5)*sin((A0-k*i)*rad),xc+(r-15)*cos((A0-k*i)*rad),yc-(r-15)*sin((A0-k*i)*rad));
      }
     }
-    // ***Draw central circle ***
-     QRadialGradient radialGrad2(QPointF(xc, yc), 50);
-         radialGrad2.setColorAt(0, Qt::black);
-         radialGrad2.setColorAt(1, "#e0e0d1");
-     painter->setPen(QPen(Qt::transparent));
-     painter->setBrush(QBrush(radialGrad2));
-     painter->drawEllipse(xc-15,yc-15,30,30);
+//    // ***Draw central circle ***
+//     QRadialGradient radialGrad2(QPointF(xc, yc), 50);
+//         radialGrad2.setColorAt(0, Qt::black);
+//         radialGrad2.setColorAt(1, "#e0e0d1");
+//     painter->setPen(QPen(Qt::transparent));
+//     painter->setBrush(QBrush(radialGrad2));
+//     painter->drawEllipse(xc-15,yc-15,30,30);
 
-       v *= k; // correction of the speed to angle
+//       v *= k; // correction of the speed to angle
 
-     QLinearGradient linearGradl(QPointF(xc-(9*cos((A0-v-90)*rad)),yc+(9*sin((A0-v-90)*rad))), QPointF(xc+(9*cos((A0-v-90)*rad)),yc-(9*sin((A0-v-90)*rad))));
-         linearGradl.setColorAt(0, "#F93737");
-         linearGradl.setColorAt(0.5, "#ff3333");
-         linearGradl.setColorAt(1, "#F93737");
+//     QLinearGradient linearGradl(QPointF(xc-(9*cos((A0-v-90)*rad)),yc+(9*sin((A0-v-90)*rad))), QPointF(xc+(9*cos((A0-v-90)*rad)),yc-(9*sin((A0-v-90)*rad))));
+//         linearGradl.setColorAt(0, "#F93737");
+//         linearGradl.setColorAt(0.5, "#ff3333");
+//         linearGradl.setColorAt(1, "#F93737");
 
-     painter->setPen(QPen(QBrush("#F93737",Qt::SolidPattern),2,Qt::SolidLine,Qt::SquareCap,Qt::RoundJoin));
-     painter->setBrush(QBrush(linearGradl));
-     QPointF points[3] = {
-         QPointF(xc-5*cos((A0-v-90)*rad),yc+5*sin((A0-v-90)*rad)),
-         QPointF(xc+(r-20)*cos((A0-v)*rad),yc-(r-20)*sin((A0-v)*rad)),
-         QPointF(xc+5*cos((A0-v-90)*rad),yc-5*sin((A0-v-90)*rad))
-          };
-     painter->drawConvexPolygon(points, 3);
+//     painter->setPen(QPen(QBrush("#F93737",Qt::SolidPattern),2,Qt::SolidLine,Qt::SquareCap,Qt::RoundJoin));
+//     painter->setBrush(QBrush(linearGradl));
+//     QPointF points[3] = {
+//         QPointF(xc-5*cos((A0-v-90)*rad),yc+5*sin((A0-v-90)*rad)),
+//         QPointF(xc+(r-20)*cos((A0-v)*rad),yc-(r-20)*sin((A0-v)*rad)),
+//         QPointF(xc+5*cos((A0-v-90)*rad),yc-5*sin((A0-v-90)*rad))
+//          };
+//     painter->drawConvexPolygon(points, 3);
 
 
 }

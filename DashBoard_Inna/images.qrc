@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>texture1.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>myicons/hand_brake.png</file>
+    </qresource>
+</RCC>

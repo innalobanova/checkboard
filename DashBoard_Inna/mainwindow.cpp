@@ -2,7 +2,11 @@
 #include "ui_mainwindow.h"
 #include <QGraphicsScene>
 #include <QSlider>
+#include <QCheckBox>
 #include <QtMath>
+#include <QPixmap>
+#include "iconinna.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -11,6 +15,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     connect(ui->horizontalSlider, SIGNAL(valueChanged(int)), this, SLOT(Font()));
+
+
 }
 
 MainWindow::~MainWindow()
@@ -21,12 +27,23 @@ MainWindow::~MainWindow()
 void MainWindow::Scene()
 {ui->graphicsView->setScene(scene);
 
-//  scene->addItem(vitesse);
-
+    scene->setBackgroundBrush(QBrush(QPixmap(":/icons/texture1.png")));
+    scene->addItem(fuel_engine);
+    scene->addItem(oilgauge);
+    scene->addItem(info);
     scene->addItem(speedometer);
     scene->addItem(tachometer);
-    scene->addItem(oilgauge);
-    scene->setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
+    myicon->imagePath = ":/myicons/hand_brake.png";
+    myicon->position = QPoint(685,350);
+    myicon->size = QSize(50,50);
+    scene->addItem(myicon);
+    scene->addItem(arrow_speedometer);
+    scene->addItem(arrow_tachometer);
+    scene->addItem(arrow_oilT);
+     scene->update();
+    // delete myicon;
+
+
 }
 
 void MainWindow::Font()
@@ -34,10 +51,18 @@ void MainWindow::Font()
 
     //vitesse->shift=ui->horizontalSlider->value();
     int v = ui->horizontalSlider->value();
-    speedometer->v = v;
-    tachometer->v = v*27;
-    oilgauge->t = v/2;
+    arrow_speedometer->v = v;
+    arrow_tachometer->v = v/27;
+    arrow_oilT->t = v;
     oilgauge->l = v/60.f;
+    fuel_engine->t = v;
+    fuel_engine->l = v/100.0;
     scene->update();
+
+}
+
+void MainWindow::HandBreak(bool ON)
+{
+
 
 }

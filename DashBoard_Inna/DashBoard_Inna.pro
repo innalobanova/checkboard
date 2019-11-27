@@ -27,18 +27,27 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    gauge.cpp \
     speedometerinna.cpp \
     tachometerinna.cpp \
-    oilgaugeinna.cpp
+    oilgaugeinna.cpp \
+    infowindowinna.cpp \
+    fuelengine.cpp \
+    iconinna.cpp \
+    arrowspeedometerinna.cpp \
+    arrowtachometerinna.cpp \
+    arrowoilt.cpp 
 
 HEADERS += \
         mainwindow.h \
-    gauge.h \
     speedometerinna.h \
     tachometerinna.h \
-    oilgaugeinna.h
-
+    oilgaugeinna.h \
+    infowindowinna.h \
+    fuelengine.h \
+    iconinna.h \
+    arrowspeedometerinna.h \
+    arrowtachometerinna.h \
+    arrowoilt.h    
 FORMS += \
         mainwindow.ui
 
@@ -46,3 +55,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    images.qrc
