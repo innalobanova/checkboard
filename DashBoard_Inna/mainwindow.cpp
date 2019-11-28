@@ -30,7 +30,7 @@ MainWindow::~MainWindow()
 void MainWindow::Scene()
 {
     ui->graphicsView->setScene(scene);
-    scene->setBackgroundBrush(QBrush(Qt::black, Qt::Dense1Pattern));
+    scene->setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
 
     arrow_tachometer->setZValue(10.0);
     arrow_speedometer->setZValue(10.0);
@@ -39,26 +39,26 @@ void MainWindow::Scene()
     engineT->setZValue(10.0);
     fuel_level->setZValue(10.0);
 
-    scene->addItem(arrow_tachometer);
-    scene->addItem(arrow_oilL);
+   // scene->addItem(arrow_tachometer);
+   // scene->addItem(arrow_oilL);
     scene->addItem(fuel_engine);
-    scene->addItem(fuel_level);
-    scene->addItem(engineT);
+   // scene->addItem(fuel_level);
+  //  scene->addItem(engineT);
     scene->addItem(oilgauge);
     scene->addItem(info);
     scene->addItem(speedometer);
     scene->addItem(tachometer);
-    IconInna * myicon2 = new IconInna(QPoint(611,275),QSize(50,50),":/myicons/hand_brake.png");
+   // IconInna * myicon2 = new IconInna(QPoint(611,275),QSize(50,50),":/myicons/hand_brake.png");
 
-    scene->addItem(myicon2);
-    scene->addItem(arrow_speedometer);
-    myicon->setVisible(5);
+ //   scene->addItem(myicon2);
+  //  scene->addItem(arrow_speedometer);
+  //  myicon->setVisible(5);
 
-    scene->addItem(arrow_oilT);
-    door1->init(QPoint (930,280), QSize(100,100), ":/myicons/driverDoorOpen.gif");
-    door2->init(QPoint (930,280), QSize(100,100), ":/myicons/backrightDoorOpen.gif");
-    scene->addItem(door1);
-    scene->addItem(door2);
+   // scene->addItem(arrow_oilT);
+  //  door1->init(QPoint (930,280), QSize(100,100), ":/myicons/driverDoorOpen.gif");
+   // door2->init(QPoint (930,280), QSize(100,100), ":/myicons/backrightDoorOpen.gif");
+  //  scene->addItem(door1);
+    //scene->addItem(door2);
 
   // server = new QTcpServer(this);
     //server->listen(QHostAddress::Any, 2222);
