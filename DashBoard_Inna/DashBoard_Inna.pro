@@ -35,7 +35,10 @@ SOURCES += \
     libCPP/iconinna.cpp \
     libCPP/arrowspeedometerinna.cpp \
     libCPP/arrowtachometerinna.cpp \
-    libCPP/arrowoilt.cpp 
+    libCPP/arrowoilt.cpp \ 
+    libCPP/arrowoill.cpp \
+    libCPP/enginetinna.cpp \
+    libCPP/fuellevelinna.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -47,7 +50,10 @@ HEADERS += \
     libH/iconinna.h \
     libH/arrowspeedometerinna.h \
     libH/arrowtachometerinna.h \
-    libH/arrowoilt.h     
+    libH/arrowoilt.h \     
+    libH/arrowoill.h \
+    libH/enginetinna.h \
+    libH/fuellevelinna.h
 FORMS += \
         mainwindow.ui
 

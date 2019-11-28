@@ -1,4 +1,4 @@
-#include "speedometerinna.h"
+#include "libH/speedometerinna.h"
 #include <QFont>
 #include <QtMath>
 #include <QPainter>

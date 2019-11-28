@@ -1,4 +1,4 @@
-#include "oilgaugeinna.h"
+#include "libH/oilgaugeinna.h"
 #include <QFont>
 #include <QtMath>
 #include <QPainter>
@@ -45,17 +45,6 @@ void OilGaugeInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
   painter->setPen(QPen(QBrush(radialGrad),4,Qt::SolidLine,Qt::FlatCap));
   painter->drawArc(QRectF(xc-r-20,yc-r-20,(r+20)*2,(r+20)*2),50*16,285*16) ;
 
-
-    // *** draw OIL TEMP
-
-    double xot = xc+30.0*cos((A0-15-Amax/2)*rad) ; //position of oil temperature arrow
-    double yot = yc - 30.0*sin((A0-15-Amax/2)*rad);
-    double  xol = xc +30.0*cos((A0+40+Amax/2)*rad) ;
-    double yol = yc - 30.0*sin((A0+40+Amax/2)*rad);
-
-    // ** Block oil temperature **
-
-    {
       k = Amax * 1.0f / (tmax - 60.0f) ;
 
          // ** oil temp ticks and numbers **
@@ -76,14 +65,13 @@ void OilGaugeInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
 
         }
 
-     }
 
-    painter->drawPixmap(85,395,50,50, QPixmap(":/myicons/Oil_white.gif"));
-    painter->drawPixmap(87,350,50,50, QPixmap(":/myicons/Oil_t_white.gif"));
+    painter->drawPixmap(90,400,40,40, QPixmap(":/myicons/Oil_white.gif"));
+    painter->drawPixmap(220,305,40,40, QPixmap(":/myicons/Oil_t_white.gif"));
 
     // ** Block oil level **
-    k = Amax * 1.0f / lmax ;
-    {
+    k = Amax * 1.0f/lmax;
+
          // ** oil level ticks and numbers **
     for (int i=0; i <= lmax*2; i++) {
         if (i%2==0)
@@ -100,35 +88,4 @@ void OilGaugeInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
         }
 
         }
-    // ***Draw central circle for oil level ***
-      QRadialGradient radialGradol(QPointF(xol, yol), 50);
-             radialGradol.setColorAt(0, Qt::black);
-             radialGradol.setColorAt(1, "#e0e0d1");
-            // radialGradl2.setColorAt(1, Qt::black);
-      painter->setPen(QPen(Qt::transparent));
-      painter->setBrush(QBrush(radialGradol));
-      painter->drawEllipse(xol-15,yol-15,30,30);
-
-   //          *** draw fleche oil level ***
-
-    k = (Amax+20) * 1.0f / lmax ;
-      QLinearGradient linearGradol  (QPointF(xol-(5*cos((A0+30+k*l-90)*rad)),yol+(5*sin((A0+30+k*l-90)*rad))), QPointF(xol+(7*cos((A0+30+k*l-90)*rad)),yol-(7*sin((A0+30+k*l-90)*rad))));
-          linearGradol.setColorAt(0, "#F93737");
-          linearGradol.setColorAt(0.5, "#ff4d4d");
-          linearGradol.setColorAt(1, "#F93737");
-
-      painter->setPen(QPen(QBrush("#F93737",Qt::SolidPattern),2,Qt::SolidLine,Qt::SquareCap,Qt::RoundJoin));
-      painter->setBrush(QBrush(linearGradol));
-      QPointF points[3] = {
-          QPointF(xol-(5*cos((A0+30+k*l-90)*rad)),yol+(5*sin((A0+30+k*l-90)*rad))),
-          QPointF(xol+(r-10)*cos((A0+30+k*l)*rad),yol-5-(r-10)*sin((A0+30+k*l)*rad)),
-          QPointF(xol+(5*cos((A0+30+k*l-90)*rad)),yol-(5*sin((A0+30+k*l-90)*rad))),
-         };
-
-      painter->drawConvexPolygon(points, 3);
-       }
-
-
-
 }
-

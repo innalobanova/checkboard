@@ -1,4 +1,4 @@
-#include "tachometerinna.h"
+#include "libH/tachometerinna.h"
 #include <QGraphicsItem>
 #include <QtMath>
 #include <QPainter>

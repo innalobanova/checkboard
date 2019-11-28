@@ -1,32 +1,31 @@
-#ifndef FUELENGINE_H
-#define FUELENGINE_H
+#ifndef ARROWOILL_H
+#define ARROWOILL_H
 #include <QGraphicsItem>
 #include <QRectF>
 #include <QFont>
 
-class FuelEngine : public QGraphicsItem
+
+class ArrowOilL : public QGraphicsItem
 {
 public:
-    FuelEngine(QGraphicsItem *parent = nullptr);
-    FuelEngine(int TMAX, int ALPHA0, int ALPHAMAX);
+    ArrowOilL(QGraphicsItem *parent = nullptr);
+    ArrowOilL( int LMAX, int ALPHA0, int ALPHAMAX);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     double r;
     int A0 ; //start Angle
     int Amax ; // max Angle
-    int tmax ; // maximum engine temperature
-
+    int lmax ; // maximum oil level
+    float l ; // current oil level
     QFont font = QFont("Chandas",12,QFont::Bold); // font parameters par default
+    float k ; // coefficient to calculate current angle
     int dx; //text shift
     int dy;
-    float k;
-
 private:
     const double rad=3.14159265359/180;
-    const int lmax = 1 ; // maximum guel level
-    double xc = 0.86 * this->boundingRect().width() ; //center of the rectangle
+    double xc = 0.14 * this->boundingRect().width() ; //center of the rectangle
     double yc = 0.63 * this->boundingRect().height() ;
 
 };
 
-#endif // FUELENGINE_H
+#endif // ARROWOILL_H

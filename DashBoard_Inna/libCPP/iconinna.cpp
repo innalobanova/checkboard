@@ -1,4 +1,4 @@
-#include "iconinna.h"
+#include "libH/iconinna.h"
 #include <QGraphicsItem>
 #include <QtMath>
 #include <QPainter>
@@ -27,3 +27,12 @@ void IconInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
   painter->drawPixmap(position.x(),position.y(),size.width(),size.height(),QPixmap(imagePath));
 
 }
+
+void IconInna::init(QPoint p, QSize s, QString pth)
+{
+    position = p;
+    size = s;
+    imagePath = pth;
+}
+
+

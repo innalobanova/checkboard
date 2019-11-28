@@ -1,4 +1,4 @@
-#include "arrowtachometerinna.h"
+#include "libH/arrowtachometerinna.h"
 #include <QGraphicsItem>
 #include <QtMath>
 #include <QPainter>
@@ -38,7 +38,7 @@ void ArrowTachometerInna::paint(QPainter *painter, const QStyleOptionGraphicsIte
 {
    painter->setRenderHint(QPainter::Antialiasing); // for better smooth rendering
 
-  
+  if (v < 0 || v > vmax) v = (v < 0 ? 0 : vmax);
    v = v*Amax * 1.0f / vmax ;
   
   // ***Draw central circle ***

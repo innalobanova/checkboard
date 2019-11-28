@@ -14,6 +14,8 @@ public:
     QString imagePath;
     QPoint position;
     QSize size;
+    void init(QPoint p, QSize s, QString pth);
+
 };
 
 #endif // ICONINNA_H

@@ -9,5 +9,20 @@
         <file>myicons/Oil_t_white.gif</file>
         <file>myicons/battery.gif</file>
         <file>myicons/OFF.gif</file>
+        <file>myicons/engineT_yellow.gif</file>
+        <file>myicons/engineT_blue.gif</file>
+        <file>myicons/fuelL_white.gif</file>
+        <file>myicons/fuelL_red.gif</file>
+        <file>myicons/backrightDoorOpen.gif</file>
+        <file>myicons/backLeftDoorOpen.gif</file>
+        <file>myicons/driverDoorOpen.gif</file>
+        <file>myicons/turnLeft.gif</file>
+        <file>myicons/turnRight.gif</file>
+        <file>myicons/frontFogLight.gif</file>
+        <file>myicons/rearFogLight.gif</file>
+        <file>myicons/highBeam.gif</file>
+        <file>myicons/lowBeam.gif</file>
+        <file>myicons/dayLight.gif</file>
+        <file>myicons/frontRightDoorOpen.gif</file>
     </qresource>
 </RCC>

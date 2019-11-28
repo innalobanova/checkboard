@@ -1,25 +1,21 @@
-#ifndef FUELENGINE_H
-#define FUELENGINE_H
+#ifndef FUELLEVELINNA_H
+#define FUELLEVELINNA_H
 #include <QGraphicsItem>
 #include <QRectF>
 #include <QFont>
 
-class FuelEngine : public QGraphicsItem
+class FuelLevelInna : public QGraphicsItem
 {
 public:
-    FuelEngine(QGraphicsItem *parent = nullptr);
-    FuelEngine(int TMAX, int ALPHA0, int ALPHAMAX);
+    FuelLevelInna(QGraphicsItem *parent = nullptr);
+    FuelLevelInna(int ALPHA0, int ALPHAMAX);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     double r;
     int A0 ; //start Angle
     int Amax ; // max Angle
-    int tmax ; // maximum engine temperature
-
-    QFont font = QFont("Chandas",12,QFont::Bold); // font parameters par default
-    int dx; //text shift
-    int dy;
-    float k;
+    float l ; // current fuel level
+    float k ; // coefficient to calculate current angle
 
 private:
     const double rad=3.14159265359/180;
@@ -29,4 +25,4 @@ private:
 
 };
 
-#endif // FUELENGINE_H
+#endif // FUELLEVELINNA_H

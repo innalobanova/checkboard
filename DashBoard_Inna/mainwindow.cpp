@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(ui->horizontalSlider, SIGNAL(valueChanged(int)), this, SLOT(Font()));
+    connect(ui->horizontalSlider, SIGNAL(valueChanged(int)), this, SLOT(Test()));
 
 
 }
@@ -28,54 +28,69 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::Scene()
-{ui->graphicsView->setScene(scene);
+{
+    ui->graphicsView->setScene(scene);
     scene->setBackgroundBrush(QBrush(Qt::black, Qt::Dense1Pattern));
-    //scene->setBackgroundBrush(QBrush(QPixmap(":/icons/myicons/black-leather-texture-background.jpg")));
+
+    arrow_tachometer->setZValue(10.0);
+    arrow_speedometer->setZValue(10.0);
+    arrow_oilT->setZValue(10.0);
+    arrow_oilL->setZValue(10.0);
+    engineT->setZValue(10.0);
+    fuel_level->setZValue(10.0);
+
+    scene->addItem(arrow_tachometer);
+    scene->addItem(arrow_oilL);
     scene->addItem(fuel_engine);
+    scene->addItem(fuel_level);
+    scene->addItem(engineT);
     scene->addItem(oilgauge);
     scene->addItem(info);
     scene->addItem(speedometer);
     scene->addItem(tachometer);
-    myicon->imagePath = ":/myicons/hand_brake.png";
-    myicon->position = QPoint(685,350);
-    myicon->size = QSize(50,50);
-    scene->addItem(myicon);
-    scene->addItem(arrow_speedometer);
-    scene->addItem(arrow_tachometer);
-    scene->addItem(arrow_oilT);
-     scene->update();
+    IconInna * myicon2 = new IconInna(QPoint(611,275),QSize(50,50),":/myicons/hand_brake.png");
 
-         server = new QTcpServer(this);
-         server->listen(QHostAddress::Any, 2222);
-         connect(server,SIGNAL(newConnection()),this, SLOT(connexion()));
+    scene->addItem(myicon2);
+    scene->addItem(arrow_speedometer);
+    myicon->setVisible(5);
+
+    scene->addItem(arrow_oilT);
+    door1->init(QPoint (930,280), QSize(100,100), ":/myicons/driverDoorOpen.gif");
+    door2->init(QPoint (930,280), QSize(100,100), ":/myicons/backrightDoorOpen.gif");
+    scene->addItem(door1);
+    scene->addItem(door2);
+
+  // server = new QTcpServer(this);
+    //server->listen(QHostAddress::Any, 2222);
+   // connect(server,SIGNAL(newConnection()),this, SLOT(connexion()));
     // delete myicon;
 
 
 }
 
-void MainWindow::Font()
+void MainWindow::Test()
 {
 
     //vitesse->shift=ui->horizontalSlider->value();
     int v = ui->horizontalSlider->value();
     arrow_speedometer->v = v;
-    arrow_tachometer->v = v/27;
+    arrow_tachometer->v = v*30;
     arrow_oilT->t = v;
-    oilgauge->l = v/60.f;
-    fuel_engine->t = v;
-    fuel_engine->l = v/100.0;
+    arrow_oilL->l = v/60.f;
+    engineT->t = v;
+    fuel_level->l = v/100.0;
     scene->update();
 
 }
 
-void MainWindow::connexion()
+void MainWindow::Connexion()
 {
     socket = this->server->nextPendingConnection();
     qDebug() << "Connected";
     connect(socket, SIGNAL(readyRead()),this, SLOT(reception()));
 }
 
-void MainWindow::reception()
+void MainWindow::Reception()
 {
     //ui->text->setText(QString(socket->readAll()));
     QString string(socket->readAll());
@@ -125,20 +140,10 @@ void MainWindow::reception()
             socket->write(text.toUtf8());
         }
     }
-//    if(message=="CANN GAZ"){
-//        int essence = string.section(' ', 2,2).toInt();
-//        if(essence>=0 && essence <= dashboard->Essence->getValueMax()){
-//            dashboard->Essence->setValue(essence);
-//            ui->graphicsView->scene()->update();
-//            QString text = "OK";
-//            socket->write(text.toUtf8());
-//        }
-//        else{
-//            QString text;
-//            text = QString("Quantité incorrect, vitesse comprise entre 0 et %1").arg(dashboard->Essence->getValueMax());
-//            socket->write(text.toUtf8());
-//        }
-//    }
-//    else
-//        qDebug() << "erreur lors de la reception du message";
+
+}
+
+void MainWindow::Beam()
+{
+
 }
