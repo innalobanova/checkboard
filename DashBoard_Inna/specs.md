@@ -1,18 +1,17 @@
 # Specs table - icons
 
-<center>
 
-| icon name   |  picture  |  object | |
+| icon name   |  picture  |  object | Comments |
 | :---: | :---: | :---: | :---: |
-|  ABS on  | +|   - |  - | . - |  - |  - | .
-| ABSProblem    |  + |  - | .  -  |  - |  - | . 
+| ABS on | +|   - |  - | 
+| ABSProblem    |  + |  - | 
 | AdaptiveCruiseControl | + | -|  -| 
 | AdaptiveSuspensionDampers    |  + |  - | .  -  |  - | 
 | Airbag    |  +|  - | .  -  |  - |  - | . 
 | AirSuspension    | + |  - | .  -  |  - |  - | . 
 | AllWheelDrive    | + |  - | .  -  |  - |  - | . 
 | AutomaticGearboxWarning    |  + |  - | .  -  |  - |  - | . 
-| * AutomaticTransmissionMode    |  + |  - | .  -  |  - |  - | . 
+| **AutomaticTransmissionMode** |  **+** |  **+** | ** PRND** | 
 | BonnetOpenWarningLight    |  + |  - | .  -  |  - |  - | . 
 | BootLidWarningLight    |  + |  - | .  -  |  - |  - | . 
 | BrakeFluid    | +  |  - | .  -  |  - |  - | . 
@@ -29,7 +28,7 @@
 | HazardLights    | +  |  - | .  -  |  - |  - | . 
 | HighbeamHeadlights    |  + |  - |   |  - |  - | . 
 | LightSensor    |  + |  - | .  -  |  - |  - | . 
-| LowBattery    | +|  - | .  -  |  - |  - | . 
+| **LowBattery    | +| VoyantBatterie(iconOnOff)| TL 900,HECK420 | **
 | LowFuelLight    | + |  - |    |  - |  - | . 
 | * MotorTemperatureGauge    | + |  + | 
 | OilLight    |  +  |  + |  - | . 
@@ -40,11 +39,10 @@
 | SecurityLight    |  +|  - | .  -  |  - |  - | . 
 | ServiceVehicleSoon    |  + |  - | .  -  |  - |  - | . 
 | Speedometer    | +|  + | .  -  |  - |  - | . 
+| SpeedCounter | | speedInna | Rect(615,390,120,60), text position 740,435 |
 | SteeringWheelLock    |  +  |  - | .  -  |  - |  - | . 
 | TachometerGauge    |  + | + | .  -  |  - |  - | . 
 | TirePressure    |  + |  - | .  -  |  - |  - | . 
 | TurnSignal    |  +|  - | .  -  |  - |  - | . 
 | UnclosedDoor    |  + |  - | .  -  |  - |  - | . 
 | WasherFluidIndicator    |  + |  - | .  -  |  
-
-</center>

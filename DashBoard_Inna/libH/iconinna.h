@@ -1,13 +1,14 @@
 #ifndef ICONINNA_H
 #define ICONINNA_H
 #include <QGraphicsItem>
+#include "objet_virtuel.h"
 #include <QRectF>
 #include <QFont>
 
-class IconInna : public QGraphicsItem
+class IconInna : public objet_virtuel
 {
 public:
-    IconInna (QGraphicsItem *parent = nullptr);
+    IconInna (objet_virtuel *parent = nullptr);
     IconInna (QPoint p, QSize s, QString pth);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);

@@ -17,6 +17,9 @@
 #include "libH/arrowoill.h"
 #include "libH/fuellevelinna.h"
 #include "libH/enginetinna.h"
+#include "prnd.h"
+#include "libH/speedinna.h"
+#include "icononoff.h"
 
 namespace Ui {
 class MainWindow;
@@ -43,6 +46,10 @@ public:
     IconInna *myicon = new IconInna;
     IconInna *door1 = new IconInna ();
     IconInna *door2 = new IconInna ();
+    PRND *drive_mode = new PRND();
+    speedInna *speed = new speedInna();
+    iconOnOff *VoyantBatterie = new iconOnOff(QPoint(900,420),QSize(40,40),":/myicons/battery.gif");
+    iconOnOff *CheckEngine = new iconOnOff(QPoint(950,420),QSize(40,40),":/myicons/checkEngine.gif");
 
     ~MainWindow();
 public slots:

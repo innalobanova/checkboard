@@ -38,7 +38,11 @@ SOURCES += \
     libCPP/arrowoilt.cpp \ 
     libCPP/arrowoill.cpp \
     libCPP/enginetinna.cpp \
-    libCPP/fuellevelinna.cpp
+    libCPP/fuellevelinna.cpp \
+    prnd.cpp \
+    objet_virtuel.cpp \
+    libH/speedinna.cpp \
+    icononoff.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -53,7 +57,11 @@ HEADERS += \
     libH/arrowoilt.h \     
     libH/arrowoill.h \
     libH/enginetinna.h \
-    libH/fuellevelinna.h
+    libH/fuellevelinna.h \
+    prnd.h \
+    objet_virtuel.h \
+    libH/speedinna.h \
+    icononoff.h
 FORMS += \
         mainwindow.ui
 

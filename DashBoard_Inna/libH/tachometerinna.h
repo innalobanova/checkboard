@@ -16,7 +16,7 @@ public:
     int Amax ; // max Angle
     int vmax ; // maximum rotations per minute
     int v ; // current speed
-    QFont font = QFont("Chandas",22,QFont::ExtraBold); // font parameters par default
+    QFont font = QFont("MechEffects2 BB",22, -1, true ); // font parameters par default
     float k ; // coefficient to calculate current angle
     int dx; //text shift
     int dy;

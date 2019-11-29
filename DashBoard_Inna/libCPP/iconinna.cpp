@@ -2,8 +2,9 @@
 #include <QGraphicsItem>
 #include <QtMath>
 #include <QPainter>
+#include "objet_virtuel.h"
 
-IconInna::IconInna(QGraphicsItem *parent) :  QGraphicsItem(parent)
+IconInna::IconInna(objet_virtuel *parent) :  objet_virtuel(parent)
 {
 
 }

@@ -2,6 +2,9 @@
     <qresource prefix="/icons">
         <file>texture1.png</file>
         <file>myicons/black-leather-texture-background.jpg</file>
+        <file>SevenSegment.ttf</file>
+        <file>myicons/mecheffects2bb_ital.ttf</file>
+        <file>myicons/mecheffects2bb_reg.ttf</file>
     </qresource>
     <qresource prefix="/">
         <file>myicons/hand_brake.png</file>
@@ -24,5 +27,10 @@
         <file>myicons/lowBeam.gif</file>
         <file>myicons/dayLight.gif</file>
         <file>myicons/frontRightDoorOpen.gif</file>
+        <file>myicons/auto_P_blue.gif</file>
+        <file>myicons/auto_D_blue.gif</file>
+        <file>myicons/auto_N_blue.gif</file>
+        <file>myicons/auto_R_blue.gif</file>
+        <file>myicons/checkEngine.gif</file>
     </qresource>
 </RCC>
