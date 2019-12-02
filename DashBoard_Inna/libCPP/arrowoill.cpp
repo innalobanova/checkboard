@@ -1,9 +1,10 @@
 #include "libH/arrowoill.h"
+#include "objet_virtuel.h"
 #include <QFont>
 #include <QtMath>
 #include <QPainter>
 
-ArrowOilL::ArrowOilL(QGraphicsItem *parent) :  QGraphicsItem(parent)
+ArrowOilL::ArrowOilL(objet_virtuel *parent) :  objet_virtuel(parent)
 {
     l=0;
     lmax = 5;
@@ -49,7 +50,7 @@ void ArrowOilL::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
       painter->drawEllipse(xol-15,yol-15,30,30);
 
    //          *** draw fleche oil level ***
-
+     l=value;
     k = (Amax+20) * 1.0f/lmax;
    if (l < 0 || l > lmax) l = (l < 0 ? 0 : lmax);
  QLinearGradient linearGradol  (QPointF(xol-(5*cos((A0+30+k*l-90)*rad)),yol+(5*sin((A0+30+k*l-90)*rad))), QPointF(xol+(7*cos((A0+30+k*l-90)*rad)),yol-(7*sin((A0+30+k*l-90)*rad))));

@@ -3,20 +3,20 @@
 
 | icon name   |  picture  |  object | Comments |
 | :---: | :---: | :---: | :---: |
-| ABS on | +|   - |  - | 
-| ABSProblem    |  + |  - | 
-| AdaptiveCruiseControl | + | -|  -| 
-| **AdaptiveSuspensionDampers**    |  **+** | **AdaptiveCruiseControl (iconOnOff)** | **390,230 60,60 yellow** |
-| Airbag    |  +|  - | .  -  |  - |  - | . 
+| **ABS**| **+** | **ABS_ON (iconOnOff)** | **995,420  50x50** |
+| **ABSProblem **| **+** | **ABS_warning (iconOnOff)** | **995,420  50x50 level 7.0** |
+| **AdaptiveCruiseControl**    |  **+** | **AdaptiveCruiseControl(iconOnOff)** | **390,230 60x60**|
+| **AdaptiveSuspensionDampers**    |  **+** | **AdaptiveSuspensionDampers(iconOnOff)** | **640,340 60,60 yellow** |
+| **Airbag**    |  **+**|  **AirbagOn(iconOnOff)** | **900,195 50x50**|
 | AirSuspension    | + |  - | .  -  |  - |  - | . 
 | AllWheelDrive    | + |  - | .  -  |  - |  - | . 
 | AutomaticGearboxWarning    |  + |  - | .  -  |  - |  - | . 
-| **AutomaticTransmissionMode** |  **+** |  ***PRND(PRND)** | **1=P, 2=R, 3=N, 4=D ** | 
-| BonnetOpenWarningLight    |  + |  - |   -  |  - |  - | . 
-| BootLidWarningLight    |  + |  - |  -  |  - |  - | . 
-| BrakeFluid    | +  |  - |  -  |  - |  - | . 
-| BrakePads    | + |  - |   -  |  - |  - | . 
-| Brake warning | + |  -  |
+| **AutomaticTransmissionMode** |  **+** |  ***PRND(PRND)** | **1=P, 2=R, 3=N, 4=D** | 
+| **BonnetOpenWarningLight**    |  **+** | **BonnetOpen(iconOnOff)** | **875,230 60x60**|
+| **BootLidWarningLight**    |  **+** | **BootOpen(iconOnOff)** | **940,230 60x60**|
+| **BrakeFluid**   | **+**  | **BrakeFluid (iconOnOff)** | **900,415 60x60** |
+| **BrakePads**   | **+**  | **BrakeFluid (iconOnOff)** | **955,425 60x60** |
+| **Brake warning** | **+** |  **same as ABS warning** |
 | BulbFailure    |  + |  - |   -  |  - |  - | . 
 | BrakeBulbFailure |  +  |   -  |
 |**CheckEngineLight**    |  + |  - | .  -  |  - |  - | . 
@@ -25,7 +25,7 @@
 | FourWDLock    | + |  - |   -  |  - |  - | . 
 | **FrontAntifog**    | **+**  |  ***FrontFogLight(iconOnOff)** |  **460,360 50x50**| 
 | ***FuelGauge**    |**+** | **+**  |
-| Handbrake    |  + |  - | .  -  |  - |  - | . 
+| **Handbrake**    |  **+** | **HandBrake(iconOnOff)** **400,350 40x40** | 
 | HazardLights    | +  |  - | .  -  |  - |  - | . 
 | **HighbeamHeadlights**    |  **+** | ***headlights (IconHeadlight)** | **470,320 50x50 value=3**|
 |**LowbeamHeadlights** |** + ** | ***headlights (IconHeadlight)** | **470,32050x500 value=2**|

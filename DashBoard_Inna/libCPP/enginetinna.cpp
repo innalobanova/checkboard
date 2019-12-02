@@ -4,8 +4,7 @@
 #include <QPainter>
 
 
-EngineTInna::EngineTInna(QGraphicsItem *parent) :  QGraphicsItem(parent)
-
+EngineTInna::EngineTInna(objet_virtuel *parent) :  objet_virtuel(parent)
 {
     t=55;
     tmax = 140 ;
@@ -48,7 +47,7 @@ void EngineTInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
       painter->drawEllipse(xet-15,yet-15,30,30);
 
       //          *** draw fleche engine temp ***
-	
+    t=value;
 	if (t < 50 || t > (tmax + 5)) t = ( t < 50 ?  50 : (tmax+5));
 
       k = (Amax+30) * 1.0f / (tmax-60) ;

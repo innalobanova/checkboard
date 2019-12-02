@@ -1,13 +1,13 @@
 #ifndef ARROWTACHOMETERINNA_H
 #define ARROWTACHOMETERINNA_H
-#include <QGraphicsItem>
+#include "objet_virtuel.h"
 #include <QRectF>
 #include <QFont>
 
-class ArrowTachometerInna : public QGraphicsItem
+class ArrowTachometerInna : public objet_virtuel
 {
 public:
-    ArrowTachometerInna(QGraphicsItem *parent = nullptr);
+    ArrowTachometerInna(objet_virtuel *parent = nullptr);
     ArrowTachometerInna(int VMAX, int ALPHA0, int ALPHAMAX);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);

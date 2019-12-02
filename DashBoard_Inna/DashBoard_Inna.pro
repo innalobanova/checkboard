@@ -6,7 +6,10 @@
 
 QT       += core gui network
 
+QT += testlib
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 
 TARGET = DashBoard_Inna
 TEMPLATE = app
@@ -43,7 +46,11 @@ SOURCES += \
     objet_virtuel.cpp \
     libH/speedinna.cpp \
     icononoff.cpp \
-    iconheadlight.cpp
+    iconheadlight.cpp \
+    clignotant.cpp \
+    inna_scene.cpp \
+    scene_globale.cpp \
+    fondinna.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -63,7 +70,11 @@ HEADERS += \
     objet_virtuel.h \
     libH/speedinna.h \
     icononoff.h \
-    iconheadlight.h
+    iconheadlight.h \
+    clignotant.h \
+    inna_scene.h \
+    scene_globale.h \
+    fondinna.h
 FORMS += \
         mainwindow.ui
 

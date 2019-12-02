@@ -3,7 +3,7 @@
 #include <QtMath>
 #include <QPainter>
 
-ArrowSpeedometerInna::ArrowSpeedometerInna(QGraphicsItem *parent) :  QGraphicsItem(parent)
+ArrowSpeedometerInna::ArrowSpeedometerInna(objet_virtuel *parent) :  objet_virtuel(parent)
 {   v=0;
     vmax = 300 ;
     A0 = 225 ;
@@ -40,7 +40,7 @@ void ArrowSpeedometerInna::paint(QPainter *painter, const QStyleOptionGraphicsIt
      painter->setPen(QPen(Qt::transparent));
      painter->setBrush(QBrush(radialGrad2));
      painter->drawEllipse(xc-15,yc-15,30,30);
-
+    v=value;
   if (v < 0 || v > (vmax +10) ) v = (v < 0 ? 0 : (vmax+10));
      v *= Amax * 1.0f / vmax ; // correction of the speed to angle
 

@@ -59,26 +59,36 @@ void MainWindow::Scene()
     scene->addItem(speedometer);
     scene->addItem(tachometer);
     scene->addItem(arrow_speedometer);
-    myicon->setVisible(5);
-
     scene->addItem(arrow_oilT);
-    door1->init(QPoint (930,280), QSize(100,100), ":/myicons/driverDoorOpen.gif");
-    door2->init(QPoint (930,280), QSize(100,100), ":/myicons/backrightDoorOpen.gif");
-    scene->addItem(door1);
-    scene->addItem(door2);
-    drive_mode->setZValue(5.0);
-    scene->addItem(drive_mode);
+    AutomaticTransmissionMode->setZValue(5.0);
+    scene->addItem(AutomaticTransmissionMode);
     speed->setZValue(5.0);
     scene->addItem(speed);
     scene->addItem(VoyantBatterie);
     scene->addItem(CheckEngine);
     scene->addItem(headlights);
-    scene->addItem(RearFogLight);
-    scene->addItem(FrontFogLight);
+    scene->addItem(RearAntifog);
+    scene->addItem(FrontAntifog);
     scene->addItem(RearWindowHeating);
-    scene->addItem(SeatBealt);
+    scene->addItem(SeatBelt);
     scene->addItem(AdaptiveCruiseControl);
     scene->addItem(AdaptiveSuspensionDampers);
+    scene->addItem(AirbagOn);
+    scene->addItem(DriversDoor);
+    scene->addItem(FrontPassDoor);
+    scene->addItem(LeftBackPassDoor);
+    scene->addItem(RightBackPassDoor);
+    scene->addItem(BonnetOpen);
+    scene->addItem(BootOpen);
+    scene->addItem(BrakeFluid);
+    scene->addItem(BrakePads);
+    scene->addItem(ABS_ON);
+    scene->addItem(ABS_warning);
+    scene->addItem(HandBrake);
+   // scene->addItem(clignotant);
+//    myGraphicsView->setScene(scene2);
+//    myGraphicsView->setGeometry(0,0,1400,600);
+//    scene2->addItem(clignotant);
 
 //   server = new QTcpServer(this);
 //    server->listen(QHostAddress::LocalHost, 2222);
@@ -98,7 +108,7 @@ void MainWindow::Test()
     fuel_level->setValue(qRound(v/5.0f));
     engineT->t = v;
     fuel_level->l = v/100.0;
-   drive_mode->setValue(ui->horizontalSlider_2->value());
+   AutomaticTransmissionMode->setValue(ui->horizontalSlider_2->value());
    speed->setValue(v);
    headlights->setValue(ui->horizontalSlider_2->value());
    scene->update();
@@ -162,6 +172,84 @@ void MainWindow::Reception()
             socket->write(text.toUtf8());
         }
     }
+    else if(message=="CANN LIGHT"){
+        int light = string.section(' ', 2,2).toInt();
+
+        if(light>=0 && light <= 3){
+           headlights->setValue(light);
+           scene->update();
+           QString text = "OK";
+            socket->write(text.toUtf8());
+        }
+        else{
+            QString text;
+            text = QString("valeur incorrect, valeur entre 0 et 3");
+            socket->write(text.toUtf8());
+        }
+    }
+
+    else if(message=="CANN ASD"){
+        int asd_on = string.section(' ', 2,2).toInt();
+        if(asd_on==0 || asd_on==1){
+            AdaptiveSuspensionDampers->setValue(asd_on);
+            scene->update();
+            QString text = "OK";
+            socket->write(text.toLocal8Bit());
+        }
+        else{
+            QString text;
+            text = QString("valeur incorrecte, doit être égale à 0 ou 1");
+            socket->write(text.toLocal8Bit());
+        }
+    }
+    else if(message=="CANN MODE"){
+        int mode = string.section(' ', 2,2).toInt();
+
+        if(mode >=1 && mode <= 4)
+        { AutomaticTransmissionMode->setValue(mode);
+         scene->update();
+            QString text = "OK";
+            socket->write(text.toUtf8());
+        }
+        else{
+            QString text;
+            text = QString("valeur incorrect, valeur entre 1 et 4");
+            socket->write(text.toUtf8());
+        }
+    }
+    else if(message=="CANN FRONT_FOG"){
+        int front_fog_on = string.section(' ', 2,2).toInt();
+        if(front_fog_on==0 || front_fog_on==1){
+            FrontAntifog->setValue(front_fog_on);
+            scene->update();
+            QString text = "OK";
+            socket->write(text.toLocal8Bit());
+        }
+        else{
+            QString text;
+            text = QString("valeur incorrecte, doit être égale à 0 ou 1");
+            socket->write(text.toLocal8Bit());
+        }
+    }
+    else if(message=="CANN REAR_FOG"){
+        int rear_fog_on = string.section(' ', 2,2).toInt();
+        if(rear_fog_on==0 || rear_fog_on==1){
+            RearAntifog->setValue(rear_fog_on);
+            scene->update();
+            QString text = "OK";
+            socket->write(text.toLocal8Bit());
+        }
+        else{
+            QString text;
+            text = QString("valeur incorrecte, doit être égale à 0 ou 1");
+            socket->write(text.toLocal8Bit());
+        }
+    }
+    else
+        qDebug() << "erreur lors de la reception du message";
+
+
+
 
 }
 

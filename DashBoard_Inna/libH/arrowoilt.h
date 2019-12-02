@@ -3,12 +3,13 @@
 #include <QGraphicsItem>
 #include <QRectF>
 #include <QFont>
+#include "objet_virtuel.h"
 
 
-class ArrowOilT : public QGraphicsItem
+class ArrowOilT : public objet_virtuel
 {
 public:
-    ArrowOilT(QGraphicsItem *parent = nullptr);
+    ArrowOilT(objet_virtuel *parent = nullptr);
     ArrowOilT(int TMAX, int LMAX, int ALPHA0, int ALPHAMAX);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);

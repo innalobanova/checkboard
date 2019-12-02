@@ -7,7 +7,6 @@
         <file>myicons/mecheffects2bb_reg.ttf</file>
     </qresource>
     <qresource prefix="/">
-        <file>myicons/hand_brake.png</file>
         <file>myicons/Oil_white.gif</file>
         <file>myicons/Oil_t_white.gif</file>
         <file>myicons/battery.gif</file>
@@ -36,5 +35,14 @@
         <file>myicons/seatBeltSign_red.gif</file>
         <file>myicons/adaptiveCruiseControl_green.gif</file>
         <file>myicons/AdaptiveSuspensionDampers_yellow.gif</file>
+        <file>myicons/airBag.gif</file>
+        <file>myicons/bonnetOpen_red.gif</file>
+        <file>myicons/bootOpen_red.gif</file>
+        <file>myicons/brakeLiquid_red.gif</file>
+        <file>myicons/brake_warning.gif</file>
+        <file>myicons/brakePads_red.gif</file>
+        <file>myicons/abs_warning.gif</file>
+        <file>myicons/ABS_ON.gif</file>
+        <file>myicons/hand_brake.gif</file>
     </qresource>
 </RCC>

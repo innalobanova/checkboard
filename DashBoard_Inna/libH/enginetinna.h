@@ -1,13 +1,13 @@
 #ifndef ENGINETINNA_H
 #define ENGINETINNA_H
-#include <QGraphicsItem>
+#include "objet_virtuel.h"
 #include <QRectF>
 #include <QFont>
 
-class EngineTInna : public QGraphicsItem
+class EngineTInna : public objet_virtuel
 {
 public:
-    EngineTInna(QGraphicsItem *parent = nullptr);
+    EngineTInna(objet_virtuel *parent = nullptr);
     EngineTInna(int TMAX, int ALPHA0, int ALPHAMAX);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);

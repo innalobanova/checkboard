@@ -3,7 +3,7 @@
 #include <QtMath>
 #include <QPainter>
 
-ArrowOilT::ArrowOilT(QGraphicsItem *parent) :  QGraphicsItem(parent)
+ArrowOilT::ArrowOilT(objet_virtuel *parent) :  objet_virtuel(parent)
 {   t=60;
     tmax = 160 ;
     lmax = 5;
@@ -38,7 +38,7 @@ void ArrowOilT::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
   
     double xot = xc + 30.0*cos((A0 - 15 - Amax / 2) * rad) ; //position of oil temperature arrow
     double yot = yc - 30.0*sin((A0 - 15 - Amax / 2) * rad);
-
+    t = value;
    if (t < 60 || t > tmax) t = (t < 60 ? 60 : tmax);
     
   // ***Draw central circle for oil temp ***

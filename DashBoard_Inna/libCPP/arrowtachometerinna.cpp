@@ -3,7 +3,7 @@
 #include <QtMath>
 #include <QPainter>
 
-ArrowTachometerInna::ArrowTachometerInna(QGraphicsItem *parent) :  QGraphicsItem(parent)
+ArrowTachometerInna::ArrowTachometerInna(objet_virtuel *parent) :  objet_virtuel(parent)
 {
     v=0;
     vmax = 8*1000 ;
@@ -37,7 +37,7 @@ QRectF ArrowTachometerInna::boundingRect() const
 void ArrowTachometerInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
    painter->setRenderHint(QPainter::Antialiasing); // for better smooth rendering
-
+    v=value;
   if (v < 0 || v > vmax) v = (v < 0 ? 0 : vmax);
    v = v*Amax * 1.0f / vmax ;
   

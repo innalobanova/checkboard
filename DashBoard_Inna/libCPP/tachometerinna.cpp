@@ -43,7 +43,7 @@ void TachometerInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
    radialGradc.setColorAt(0.9, "#333333");
    radialGradc.setColorAt(1, "#f2f2f2");
    painter->setPen(QPen(QBrush(radialGradc),4,Qt::SolidLine,Qt::FlatCap)); // setting the brush with a gradient
-   painter->setBrush(QBrush("#0a0f0f",Qt::SolidPattern));
+   painter->setBrush(QBrush(/*"#0a0f0f"*/Qt::transparent,Qt::SolidPattern));
    painter->drawEllipse(qRound(xc-r),qRound(yc-r),2*r,2*r) ;
    QRadialGradient radialGrad(QPointF(xc, yc), r);
    radialGrad.setColorAt(0, Qt::transparent);
@@ -77,15 +77,15 @@ void TachometerInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
   }
  painter->setFont(QFont("Chandas",6, -1));
 
-   for (int i=0; i< 1401; i+=20)
-   {
-       for (int j=0; j<601; j+=20)
-       {
-           if (i%100 ==0 && j%100 == 0) painter->drawText(i,j,QString("*%1,%2").arg(i).arg(j));
-           else painter->drawText(i,j,"'");
+//   for (int i=0; i< 1401; i+=20)
+//   {
+//       for (int j=0; j<601; j+=20)
+//       {
+//           if (i%100 ==0 && j%100 == 0) painter->drawText(i,j,QString("*%1,%2").arg(i).arg(j));
+//           else painter->drawText(i,j,"'");
 
-       }
-   }
+//       }
+//   }
 
 
 }
