@@ -32,5 +32,9 @@
         <file>myicons/auto_N_blue.gif</file>
         <file>myicons/auto_R_blue.gif</file>
         <file>myicons/checkEngine.gif</file>
+        <file>myicons/rearWindowHeating_yellow.gif</file>
+        <file>myicons/seatBeltSign_red.gif</file>
+        <file>myicons/adaptiveCruiseControl_green.gif</file>
+        <file>myicons/AdaptiveSuspensionDampers_yellow.gif</file>
     </qresource>
 </RCC>

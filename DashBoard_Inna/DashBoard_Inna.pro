@@ -42,7 +42,8 @@ SOURCES += \
     prnd.cpp \
     objet_virtuel.cpp \
     libH/speedinna.cpp \
-    icononoff.cpp
+    icononoff.cpp \
+    iconheadlight.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -61,7 +62,8 @@ HEADERS += \
     prnd.h \
     objet_virtuel.h \
     libH/speedinna.h \
-    icononoff.h
+    icononoff.h \
+    iconheadlight.h
 FORMS += \
         mainwindow.ui
 

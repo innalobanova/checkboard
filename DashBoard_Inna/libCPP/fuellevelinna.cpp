@@ -1,12 +1,13 @@
 #include "libH/fuellevelinna.h"
+#include "objet_virtuel.h"
 #include <QGraphicsItem>
 #include <QtMath>
 #include <QPainter>
 
 
-FuelLevelInna::FuelLevelInna(QGraphicsItem *parent) :  QGraphicsItem(parent)
+FuelLevelInna::FuelLevelInna(objet_virtuel *parent) :  objet_virtuel(parent)
 
-{
+{   value = 0;
     A0 = 0 ;
     Amax = 110 ;
     r = 100.0 ;
@@ -15,7 +16,7 @@ FuelLevelInna::FuelLevelInna(QGraphicsItem *parent) :  QGraphicsItem(parent)
 
 FuelLevelInna::FuelLevelInna(int ALPHA0, int ALPHAMAX)
 {
-    
+    value = 0;
     A0 = ALPHA0 ;
     Amax = ALPHAMAX ;
     r = 100.0 ;
@@ -42,6 +43,7 @@ void FuelLevelInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
         painter->drawEllipse(xf-15,yf-15,30,30);
 
      //          *** draw fleche fuel level***
+    l = value *0.01f;
 
 	if (l < 0.0f || l > 1.0f) l = (l < 0.0f ? 0.0f : 1.0f);
 
@@ -61,6 +63,12 @@ void FuelLevelInna::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
            };
 
         painter->drawConvexPolygon(pointsF, 3);
+
+        if (l >= 0 && l <=0.2)
+                painter->drawPixmap(1270,370,50,50, QPixmap(":/myicons/fuelL_red.gif"));
+        else
+                painter->drawPixmap(1270,370,50,50, QPixmap(":/myicons/fuelL_white.gif"));
+
 
 
 }

@@ -10,6 +10,9 @@
 #include <QDebug>
 #include "libH/iconinna.h"
 #include <QFontDatabase>
+#include "objet_virtuel.h"
+
+
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -67,10 +70,16 @@ void MainWindow::Scene()
     scene->addItem(drive_mode);
     speed->setZValue(5.0);
     scene->addItem(speed);
-    VoyantBatterie->setZValue(5.0);
     scene->addItem(VoyantBatterie);
-    CheckEngine->setZValue(5.0);
     scene->addItem(CheckEngine);
+    scene->addItem(headlights);
+    scene->addItem(RearFogLight);
+    scene->addItem(FrontFogLight);
+    scene->addItem(RearWindowHeating);
+    scene->addItem(SeatBealt);
+    scene->addItem(AdaptiveCruiseControl);
+    scene->addItem(AdaptiveSuspensionDampers);
+
 //   server = new QTcpServer(this);
 //    server->listen(QHostAddress::LocalHost, 2222);
 //    connect(server,SIGNAL(newConnection()),this, SLOT(Connexion()));
@@ -85,11 +94,13 @@ void MainWindow::Test()
     arrow_speedometer->v = v;
     arrow_tachometer->v = v*30;
     arrow_oilT->t = v;
-    arrow_oilL->l = v/60.f;
+    arrow_oilL->l = v/5.f;
+    fuel_level->setValue(qRound(v/5.0f));
     engineT->t = v;
     fuel_level->l = v/100.0;
    drive_mode->setValue(ui->horizontalSlider_2->value());
    speed->setValue(v);
+   headlights->setValue(ui->horizontalSlider_2->value());
    scene->update();
 
 }

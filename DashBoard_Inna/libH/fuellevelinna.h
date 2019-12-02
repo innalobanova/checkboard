@@ -1,13 +1,14 @@
 #ifndef FUELLEVELINNA_H
 #define FUELLEVELINNA_H
 #include <QGraphicsItem>
+#include "objet_virtuel.h"
 #include <QRectF>
 #include <QFont>
 
-class FuelLevelInna : public QGraphicsItem
+class FuelLevelInna : public objet_virtuel
 {
 public:
-    FuelLevelInna(QGraphicsItem *parent = nullptr);
+    FuelLevelInna(objet_virtuel *parent = nullptr);
     FuelLevelInna(int ALPHA0, int ALPHAMAX);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);

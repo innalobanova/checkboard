@@ -7,12 +7,13 @@ iconOnOff::iconOnOff(IconInna *parent) : IconInna (parent)
     value = 1;
 }
 
-iconOnOff::iconOnOff(QPoint p, QSize s, QString pth)
+iconOnOff::iconOnOff(QPoint p, QSize s, QString pth, double Z)
 {
     value = 1;
     position = p;
     size = s;
     imagePath = pth;
+    this->setZValue(Z);
 }
 
 QRectF iconOnOff::boundingRect() const
@@ -26,7 +27,7 @@ void iconOnOff::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
     if (value == 1)
         {
-             painter->drawPixmap(position.x(),position.y(),size.width(),size.height(), imagePath);
+             painter->drawPixmap(position.x(),position.y(),size.width(),size.height(), QPixmap( imagePath));
         }
     else
          {   painter->setPen(Qt::transparent);

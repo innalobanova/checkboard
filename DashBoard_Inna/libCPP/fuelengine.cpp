@@ -46,8 +46,6 @@ void FuelEngine::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
 
 
       painter->drawPixmap(1140,315,40,40, QPixmap(":/myicons/engineT_blue.gif"));
-      painter->drawPixmap(1280,380,40,40, QPixmap(":/myicons/fuelL_white.gif"));
-      painter->drawPixmap(1105,392,40,40, QPixmap(":/myicons/fuelL_red.gif"));
 
       k = Amax * 1.0f / (tmax - 60.0f) ;
       // *** engine T ticks and tect ***

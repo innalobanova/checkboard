@@ -20,6 +20,7 @@
 #include "prnd.h"
 #include "libH/speedinna.h"
 #include "icononoff.h"
+#include "iconheadlight.h"
 
 namespace Ui {
 class MainWindow;
@@ -43,13 +44,23 @@ public:
     FuelEngine *fuel_engine = new FuelEngine ();
     FuelLevelInna *fuel_level = new FuelLevelInna ();
     EngineTInna *engineT = new EngineTInna ();
+    PRND *drive_mode = new PRND();
+    speedInna *speed = new speedInna();
+    IconHeadlight *headlights = new IconHeadlight ();
     IconInna *myicon = new IconInna;
     IconInna *door1 = new IconInna ();
     IconInna *door2 = new IconInna ();
-    PRND *drive_mode = new PRND();
-    speedInna *speed = new speedInna();
-    iconOnOff *VoyantBatterie = new iconOnOff(QPoint(900,420),QSize(40,40),":/myicons/battery.gif");
-    iconOnOff *CheckEngine = new iconOnOff(QPoint(950,420),QSize(40,40),":/myicons/checkEngine.gif");
+    iconOnOff *VoyantBatterie = new iconOnOff(QPoint(900,420),QSize(40,40),":/myicons/battery.gif",5.0);
+    iconOnOff *CheckEngine = new iconOnOff(QPoint(950,420),QSize(40,40),":/myicons/checkEngine.gif",5.0);
+    iconOnOff *RearFogLight = new iconOnOff(QPoint(460,360),QSize(50,50),":/myicons/rearFogLight.gif",5.0);
+    iconOnOff *FrontFogLight = new iconOnOff(QPoint(495,360),QSize(50,50),":/myicons/frontFogLight.gif",5.0);
+    iconOnOff *RearWindowHeating = new iconOnOff(QPoint(470,400),QSize(50,50),":/myicons/rearWindowHeating_yellow.gif",5.0);
+    iconOnOff *SeatBealt = new iconOnOff(QPoint(900,220),QSize(50,50),":/myicons/seatBeltSign_red.gif",5.0);
+    iconOnOff *AdaptiveCruiseControl= new iconOnOff(QPoint(390,230),QSize(60,60),":/myicons/adaptiveCruiseControl_green.gif",5.0);
+    iconOnOff * AdaptiveSuspensionDampers = new iconOnOff(QPoint(640,340),QSize(50,50),":/myicons/AdaptiveSuspensionDampers_yellow.gif",5.0);
+
+
+
 
     ~MainWindow();
 public slots:

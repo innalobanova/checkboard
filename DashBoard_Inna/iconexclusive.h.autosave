@@ -1,0 +1,14 @@
+#ifndef ICONEXCLUSIVE_H
+#define ICONEXCLUSIVE_H
+#include "libH/iconinna.h"
+#include <QRectF>
+#include <QFont>
+
+class IconExclusive : public IconInna
+{
+public:
+    IconExclusive(IconInna *parent = nullptr);
+    
+};
+
+#endif // ICONEXCLUSIVE_H
